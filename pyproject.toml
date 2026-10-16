@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evidence-response-distillation"
+version = "0.1.0"
+description = "Research implementation of Evidence-Response Distillation (ERD)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dependencies = [
+    "torch>=2.3,<3",
+    "transformers>=4.57,<5",
+    "peft>=0.14,<1",
+    "numpy>=1.26",
+    "pyarrow>=16",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
